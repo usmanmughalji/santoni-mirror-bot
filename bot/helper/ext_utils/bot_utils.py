@@ -96,14 +96,14 @@ def get_readable_message():
             msg += download.status()
             if download.status() != MirrorStatus.STATUS_ARCHIVING and download.status() != MirrorStatus.STATUS_EXTRACTING:
                 msg += f"\n\n<code>{get_progress_bar_string(download)} {download.progress()}</code>" \
-                       f"\n\n<b>Progress :</b> {get_readable_file_size(download.processed_bytes())}" \
-                       f"\n<b>Size :</b> {download.size()}" \
-                       f"\n<b>Speed :</b> {download.speed()} <b>| ETA :</b> {download.eta()} "
+                       f"\n\n📈 <b>Progress :</b> {get_readable_file_size(download.processed_bytes())}" \
+                       f"\n📀 <b>Size :</b> {download.size()}" \
+                       f"\n🚀 <b>Speed :</b> {download.speed()} <b>| ⏳ ETA :</b> {download.eta()} "
             if download.status() == MirrorStatus.STATUS_DOWNLOADING:
                 if hasattr(download, 'is_torrent'):
-                    msg += f"\n<b>Peer :</b> {download.aria_download().connections} " \
-                           f"<b>| Seed :</b> {download.aria_download().num_seeders}"
-                msg += f"\n<b>cancel :</b> <code>/cancel {download.gid()}</code>"
+                    msg += f"\n👀 <b>Peer :</b> {download.aria_download().connections} " \
+                           f"<b>| 🌱 Seed :</b> {download.aria_download().num_seeders}"
+                msg += f"\n❎ <b>Cancel :</b> <code>/cancel {download.gid()}</code>"
             msg += "\n\n"
         return msg
 
