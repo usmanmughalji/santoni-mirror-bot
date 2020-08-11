@@ -26,13 +26,13 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>🕛Bot Uptime:</b> {currentTime}\n' \
-            f'<b>🌌Total disk space:</b> {total}\n' \
-            f'<b>📂Used:</b> {used}\n' \
-            f'<b>🆓Free:</b> {free}\n' \
-            f'<b>💻CPU:</b> {cpuUsage}%\n' \
-            f'<b>🚀RAM:</b> {memory}%\n' \
-            f'<b>💽Disk:</b> {disk}%'
+    stats = f'🕛 <b>Bot Uptime:</b> {currentTime}\n' \
+            f'🌌 <b>Total Disk:</b> {total}\n' \
+            f'📂 <b>Used:</b> {used}\n' \
+            f'🆓 <b>Free:</b> {free}\n' \
+            f'💻 <b>CPU:</b> {cpuUsage}%\n' \
+            f'🚀 <b>RAM:</b> {memory}%\n' \
+            f'💽 <b>Disk:</b> {disk}%'
     sendMessage(stats, context.bot, update)
 
 
