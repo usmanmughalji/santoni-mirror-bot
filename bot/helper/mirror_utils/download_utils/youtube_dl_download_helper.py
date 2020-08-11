@@ -97,7 +97,7 @@ class YoutubeDLHelper(DownloadHelper):
 
     def extractMetaData(self, link):
         if 'hotstar' in link:
-            self.opts['geo_bypass_country'] = 'IN'
+            self.opts['geo_bypass_country'] = 'PK'
 
         with YoutubeDL(self.opts) as ydl:
             try:
