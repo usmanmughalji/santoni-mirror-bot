@@ -3,19 +3,12 @@ from bot.helper.mirror_utils.upload_utils.gdriveTools import GoogleDriveHelper
 from bot import LOGGER, dispatcher
 from bot.helper.telegram_helper.message_utils import sendMessage, editMessage
 from bot.helper.telegram_helper.filters import CustomFilters
-<<<<<<< HEAD
-=======
 import threading
-<<<<<<< HEAD
 import re
->>>>>>> e0f74e6... search fix for special characters
-=======
->>>>>>> 8e6e56b... fix for apostrophe error
 from bot.helper.telegram_helper.bot_commands import BotCommands
 
 @run_async
 def list_drive(update,context):
-<<<<<<< HEAD
     try:
         search = update.message.text.split(' ',maxsplit=1)[1]
     except IndexError:
@@ -24,16 +17,11 @@ def list_drive(update,context):
         
     reply = sendMessage('Searching...', context.bot, update)
 
-=======
     message = update.message.text
     search = message.split(' ',maxsplit=1)[1]
-<<<<<<< HEAD
     search = re.escape(search)
->>>>>>> e0f74e6... search fix for special characters
-=======
     if "'"in search:
         search = search.replace("'", "\\'")
->>>>>>> 8e6e56b... fix for apostrophe error
     LOGGER.info(f"Searching: {search}")
         
     gdrive = GoogleDriveHelper(None)
